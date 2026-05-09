@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FinTools</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body class="dark">
+
+<aside id="sidebar">
+  <div class="sidebar-top">
+    <div class="brand">
+      <div class="brand-logo"><span class="material-icons-round">calculate</span></div>
+      <span class="brand-name">FinTools <span class="brand-np">NP</span></span>
+      <button class="close-btn" onclick="toggleSidebar()">
+        <span class="material-icons-round">close</span>
+      </button>
+    </div>
+    <nav>
+      <div class="nav-label">Tools</div>
+      <button class="nav-item active" id="btn-home" onclick="showHome()">
+        <span class="material-icons-round">home</span><span>Home</span>
+      </button>
+      <button class="nav-item" id="btn-interest_calc" onclick="loadSite('interest_calc',this)">
+        <span class="material-icons-round">percent</span><span>Interest Calculator</span>
+      </button>
+      <button class="nav-item" id="btn-Tax_calculator" onclick="loadSite('Tax_calculator',this)">
+        <span class="material-icons-round">receipt_long</span><span>Tax Calculator</span>
+      </button>
+      <button class="nav-item" id="btn-latefee" onclick="loadSite('latefee',this)">
+        <span class="material-icons-round">schedule</span><span>Late Fee Settlement</span>
+      </button>
+    </nav>
+  </div>
+  <div class="sidebar-bottom">
+    <button class="theme-btn" onclick="toggleTheme()">
+      <span class="material-icons-round" id="theme-icon">light_mode</span>
+      <span id="theme-label">Light Mode</span>
+    </button>
+  </div>
+</aside>
+
+<!-- Overlay for mobile -->
+<div id="overlay" onclick="toggleSidebar()"></div>
+
+<main id="main">
+  <header id="topbar">
+    <button class="menu-btn" onclick="toggleSidebar()">
+      <span class="material-icons-round">menu</span>
+    </button>
+    <span id="topbar-title">Home</span>
+  </header>
+
+  <div id="home-view">
+
+    <div class="banner">
+      <div class="banner-text">
+        <div class="chip"><span class="material-icons-round">flag</span>Nepal Financial Tools</div>
+        <h1>Welcome 👋</h1>
+        <p>Calculator made by Subash Paudel, pick a tool to get started.</p>
+      </div>
+      <div class="banner-graphic">
+        <div class="gc c1"></div>
+        <div class="gc c2"></div>
+        <div class="gc c3"></div>
+        <span class="material-icons-round gi">account_balance</span>
+      </div>
+    </div>
+
+    <div class="sec-head">
+      <h2>Your Tools</h2>
+      <span class="badge">3 tools</span>
+    </div>
+
+    <div class="grid">
+
+      <div class="card" onclick="loadSite('interest_calc',document.getElementById('btn-interest_calc'))">
+        <div class="card-top">
+          <div class="icon-wrap green"><span class="material-icons-round">percent</span></div>
+          <span class="card-badge">Calculator</span>
+        </div>
+        <h3>Interest Calculator</h3>
+        <p>Loan calculator along with breakdown in Nepali Rupees with Printable Quotation.</p>
+        <div class="card-foot">
+          <span class="tag">Loan</span><span class="tag">NPR</span>
+          <div class="arrow-btn">Open <span class="material-icons-round">arrow_forward</span></div>
+        </div>
+      </div>
+
+      <div class="card" onclick="loadSite('Tax_calculator',document.getElementById('btn-Tax_calculator'))">
+        <div class="card-top">
+          <div class="icon-wrap blue"><span class="material-icons-round">receipt_long</span></div>
+          <span class="card-badge">Calculator</span>
+        </div>
+        <h3>Tax Calculator</h3>
+        <p>Employee Income Tax, FY 2082/83 — Computed as per IRD Nepal guidelines.</p>
+        <div class="card-foot">
+          <span class="tag">IRD</span><span class="tag">FY 2082/83</span>
+          <div class="arrow-btn">Open <span class="material-icons-round">arrow_forward</span></div>
+        </div>
+      </div>
+
+      <div class="card" onclick="loadSite('latefee',document.getElementById('btn-latefee'))">
+        <div class="card-top">
+          <div class="icon-wrap orange"><span class="material-icons-round">schedule</span></div>
+          <span class="card-badge">Calculator</span>
+        </div>
+        <h3>Late Fee Settlement</h3>
+        <p>Insurance late fee & settlement calculator at 10% p.a. with detailed report.</p>
+        <div class="card-foot">
+          <span class="tag">Insurance</span><span class="tag">10% p.a.</span>
+          <div class="arrow-btn">Open <span class="material-icons-round">arrow_forward</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="stats">
+      <div class="stat"><span class="material-icons-round">apps</span><div><b>3</b><span>Tools Available</span></div></div>
+      <div class="stat"><span class="material-icons-round">public</span><div><b>🇳🇵</b><span>Built for Nepal</span></div></div>
+      <div class="stat"><span class="material-icons-round">code</span><div><b>100%</b><span>Open Source</span></div></div>
+    </div>
+
+  </div>
+
+  <div id="iframe-view">
+    <div id="bar"></div>
+    <iframe id="frame" src="" frameborder="0"></iframe>
+  </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
